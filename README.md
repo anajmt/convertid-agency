@@ -1,46 +1,27 @@
 # ConvertID website
 
-Static, single-page website for ConvertID, an email and lifecycle marketing agency for independent fashion and ecommerce brands.
+This repo mirrors the live ConvertID project in Claude (artifact "ConvertID Website", https://claude.ai/artifact/SCLq7tqtrXkPrjAfixqELa). It is a static, multi-page site:
 
-## Files
-
-- `index.html`: all page content and sections.
-- `assets/css/styles.css`: styles (cream and charcoal palette, responsive layout, reduced-motion support).
-- `assets/js/main.js`: revenue calculator, measurement dashboard, animated counters, contact form handling.
-- `assets/js/config.js`: site configuration, including the form endpoint.
+- `index.html`: home page (hero, goal, services, tools, six projects, copywriting table, 90-day process, pricing, audit, measurement, founder, FAQ, scorecard form).
+- `work/*/index.html`: six client project pages, each with real email screenshots.
+- `privacy/index.html`: privacy policy (draft).
+- `assets/css/style.css`, `assets/js/main.js`: styles and menu, scorecard form handling.
+- `assets/img/`: logo, founder photo, and 24 real email screenshots (JPG and WebP).
 
 ## Before going live
 
-1. **Connect the contact form.** Create a form endpoint (for example, Formspree) and set it in `assets/js/config.js`:
-   ```js
-   formEndpoint: "https://formspree.io/f/your-form-id"
-   ```
-   Until this is set, the form does not send anything. It shows a message asking people to email `support.convertid@gmail.com` or book a call. Test a real submission before you say the form works.
-2. **Add real screenshots** of client email designs to the six portfolio cards, only with client permission. Replace the `.shot` placeholders with `<img>` tags.
-3. **Confirm project categories** for each portfolio brand. They currently read "Category: TBC".
-4. **Add campaign imagery** to the hero mock-up if you have licensed or owned photography.
-5. **Review the founder copy** with Ana before publishing.
+1. **Scorecard form.** The form posts to Netlify Forms, so it works once the site is deployed on Netlify. Submissions appear under Forms in Netlify. For Klaviyo instead, replace the form with the Klaviyo embed (the code comment in `index.html` says where).
+2. **Privacy policy.** Fill in the bracketed items: business name, ABN, hosting provider, analytics (if used). It is marked as a draft for review against the Australian Privacy Principles.
+3. **Results.** Each project page has a `RESULTS` comment. Add real results only with the client's written approval. None are published now.
+4. **Decisions to confirm.** The live copy states the goal "double your newsletter revenue in 6 months", with a 3% performance fee from month 7 above the 2x target. Both come from the business plan. Confirm they are approved before publishing. The live headline also differs from the brief's headline ("Turn Your Email List Into a More Reliable Revenue Channel."); the choice is yours.
+
+## Deploy
+
+Netlify: publish this folder (no build step). The canonical URL in the pages is `https://convertid.netlify.app/`.
 
 ## Content rules
 
-- All revenue figures on the dashboards and the case study are fictional and labelled as illustrative. Do not present them as client results.
-- Do not add testimonials, client logos, or performance statistics that have not been verified and approved.
-- Do not describe the $750 full audit as free. The free offer is the initial review, which is limited to a 30-minute call.
+- Do not describe the $750 audit as free.
+- Do not publish client results, testimonials or logos without written approval.
 - Do not publish an unverified founder location.
-- Do not add discounts or pricing that aren't approved.
-
-## Preview locally
-
-Open `index.html` in a browser, or run a simple local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then visit http://localhost:8000.
-
-## Sources used
-
-- Notion: ConvertID Brand Guide (logo rules, palette, DM Sans), Agency Business Plan (pricing, $750 audit terms, onboarding steps), Flow Blueprints (flow timings), 90-Day Launch Plan (readiness and what is still needed).
-- Google Drive: logo pack and founder photo. These are referenced by filename in `assets/img/README.md` and must be copied in before going live.
-- Drive client folders hold website screenshots (not email designs). They are not on the site until the client agrees.
+- Client website screenshots in Drive are not used here.
