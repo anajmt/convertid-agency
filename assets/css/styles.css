@@ -1,24 +1,35 @@
 /* ConvertID — editorial, restrained, revenue-focused */
 
+/* Colours and fonts follow the ConvertID Brand Guide (Notion, Oct 2026). */
 :root {
-  --cream: #f6f1e8;
-  --paper: #fbf8f2;
-  --sand: #efe7d8;
-  --line: #e2d9c8;
-  --ink: #1f1e1c;
-  --charcoal: #2e2c29;
-  --muted: #6b665e;
-  --taupe: #8c7356;
-  --taupe-dark: #6f5a43;
-  --positive: #3d6a4e;
-  --negative: #8a4b3c;
-  --dark-bg: #1d1c1a;
+  --navy: #0f2846;        /* headlines, body on light, dark backgrounds */
+  --cyan: #00d2ff;        /* highlights on navy only, never text on white */
+  --brand: #0877a6;       /* buttons, links, accent text on light */
+  --deep: #0b5f8a;        /* hover, second gradient stop */
+  --ice: #f2f8fc;         /* page background */
+  --mist: #e6f4fa;        /* soft panels, banding */
+  --line: #d5e3ec;        /* borders, dividers */
+  --slate: #3f5168;       /* body text */
+  --muted: #55667A;       /* captions, footers */
+  --white: #ffffff;
 
-  --serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
-  --sans: "Inter", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* Aliases used throughout the stylesheet */
+  --cream: var(--ice);
+  --paper: var(--white);
+  --sand: var(--mist);
+  --ink: var(--navy);
+  --charcoal: var(--slate);
+  --taupe: var(--brand);
+  --taupe-dark: var(--deep);
+  --positive: #1f7a4d;
+  --negative: #a13d2d;
+  --dark-bg: var(--navy);
 
-  --radius: 6px;
-  --shadow: 0 1px 2px rgba(31, 30, 28, 0.04), 0 8px 24px rgba(31, 30, 28, 0.05);
+  --serif: "DM Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --sans: "DM Sans", -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --radius: 8px;
+  --shadow: 0 1px 2px rgba(15, 40, 70, 0.05), 0 8px 24px rgba(15, 40, 70, 0.06);
   --max: 1160px;
 }
 
@@ -633,3 +644,49 @@ p { margin: 0 0 1em; }
   }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Brand guide overrides ---------- */
+h1, h2, h3 { font-family: var(--sans); font-weight: 700; letter-spacing: -0.02em; color: var(--navy); }
+h1 { font-size: clamp(2.4rem, 5vw, 4rem); }
+body { color: var(--slate); }
+
+.btn { background: var(--brand); border-color: var(--brand); color: var(--white); }
+.btn:hover { background: var(--deep); border-color: var(--deep); color: var(--white); }
+.btn-ghost { background: transparent; color: var(--navy); border-color: var(--navy); }
+.btn-ghost:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
+
+.logo { display: inline-flex; align-items: center; }
+.logo img { height: 40px; width: auto; display: block; }
+.footer-logo { margin: 0 0 12px; background: var(--white); display: inline-block; border-radius: 12px; padding: 10px 14px; }
+.footer-logo img { height: 44px; width: auto; display: block; }
+.site-footer { background: var(--navy); }
+
+.hero-brand {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 100%);
+  color: var(--white);
+}
+.hero-brand h1, .hero-brand .lead { color: var(--white); }
+.hero-brand .supporting { color: #d4e6f0; }
+.hero-brand .eyebrow { color: var(--cyan); }
+.hero-brand .glance { border-top-color: rgba(255,255,255,0.22); }
+.hero-brand .glance p { color: #e6f0f7; }
+.hero-brand .glance-num { color: var(--cyan); }
+.hero-brand .glance > div + div { border-left-color: rgba(255,255,255,0.22); }
+.hero-brand .btn { background: var(--white); color: var(--navy); border-color: var(--white); }
+.hero-brand .btn:hover { background: var(--mist); color: var(--navy); border-color: var(--mist); }
+.hero-brand .btn-ghost { color: var(--white); border-color: var(--white); background: transparent; }
+.hero-brand .btn-ghost:hover { background: var(--white); color: var(--navy); }
+
+
+.founder-photo {
+  width: 200px; height: 200px; object-fit: cover;
+  border-radius: var(--radius); border: 1px solid var(--line);
+}
+.final-cta { background: var(--mist); }
+.final-message { color: var(--brand); font-style: normal; font-weight: 500; }
+.eyebrow { color: var(--brand); }
+.eyebrow-light { color: var(--cyan); }
+.section-dark { background: var(--navy); }
+.audit-card { background: #142f50; border-color: #244569; }
+.hero-brand .panel-label, .hero-brand .panel-note { color: var(--muted); }
+.site-header { background: rgba(255, 255, 255, 0.94); }
