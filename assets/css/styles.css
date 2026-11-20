@@ -690,3 +690,15 @@ body { color: var(--slate); }
 .audit-card { background: #142f50; border-color: #244569; }
 .hero-brand .panel-label, .hero-brand .panel-note { color: var(--muted); }
 .site-header { background: rgba(255, 255, 255, 0.94); }
+.steps { list-style: none; padding: 0; margin: 0; counter-reset: step; max-width: 860px; }
+.steps li {
+  counter-increment: step; position: relative;
+  padding: 16px 0 16px 56px; border-bottom: 1px solid var(--line); font-size: 15px;
+}
+.steps li::before {
+  content: counter(step); position: absolute; left: 0; top: 14px;
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--brand); color: var(--white);
+  display: grid; place-items: center; font-weight: 700; font-size: 14px;
+}
+.steps strong { color: var(--navy); }

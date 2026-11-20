@@ -38,3 +38,9 @@ python3 -m http.server 8000
 ```
 
 Then visit http://localhost:8000.
+
+## Sources used
+
+- Notion: ConvertID Brand Guide (logo rules, palette, DM Sans), Agency Business Plan (pricing, $750 audit terms, onboarding steps), Flow Blueprints (flow timings), 90-Day Launch Plan (readiness and what is still needed).
+- Google Drive: logo pack and founder photo. These are referenced by filename in `assets/img/README.md` and must be copied in before going live.
+- Drive client folders hold website screenshots (not email designs). They are not on the site until the client agrees.
