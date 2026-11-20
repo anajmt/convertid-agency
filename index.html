@@ -229,9 +229,7 @@
     <div class="form-card">
       <h3>Get the free email scorecard</h3>
       <p class="small">Tell us where to look. We review your sign-up, flows and recent campaigns and send the scorecard by email.</p>
-      <!-- SCORECARD FORM: works on Netlify Forms. To use Klaviyo instead, replace this <form> with your Klaviyo embed code (see GO-LIVE-GUIDE.md). -->
-      <form name="scorecard" method="POST" data-netlify="true" netlify-honeypot="company-website" novalidate>
-        <input type="hidden" name="form-name" value="scorecard">
+            <form name="scorecard" action="https://formspree.io/f/xaeodwon" method="POST" novalidate>
         <p class="hidden"><label>Leave this empty <input name="company-website" tabindex="-1" autocomplete="off"></label></p>
         <div class="field"><label for="f-name">First name</label><input id="f-name" name="first_name" autocomplete="given-name" required></div>
         <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>

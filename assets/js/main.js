@@ -23,8 +23,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Scorecard form. On Netlify, submissions are stored under Forms and emailed to you.
-  // When you switch to Klaviyo, replace the <form> with the Klaviyo embed (see GO-LIVE-GUIDE.md).
+  // Scorecard form posts to the Formspree endpoint set in the form's action attribute.
   var form = document.querySelector('form[name="scorecard"]');
   if (form) {
     form.addEventListener('submit', function (e) {
@@ -36,9 +35,9 @@
       status.className = 'form-status';
       status.textContent = 'Sending…';
       var body = new URLSearchParams(new FormData(form)).toString();
-      fetch('/', {
+      fetch(form.action, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded', 'Accept': 'application/json' },
         body: body
       }).then(function (r) {
         if (!r.ok) throw new Error(r.status);
